@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Board from "./components/Board";
-import { observe } from "./components/Game";
+import { observe, moveKnight, canMoveKnight } from "./components/Game";
 
 const root = document.getElementById("root");
 

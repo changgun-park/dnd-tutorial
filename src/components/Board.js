@@ -1,5 +1,6 @@
 import Square from "./Square";
 import Knight from "./Knight";
+import { handleSquareClick } from "./Game";
 
 function renderSquare(i, [knightX, knightY]) {
   const x = i % 8;
@@ -10,7 +11,11 @@ function renderSquare(i, [knightX, knightY]) {
   const piece = isKnightHere ? <Knight /> : null;
 
   return (
-    <div key={i} style={{ width: "12.5%", height: "12.5%" }}>
+    <div
+      key={i}
+      onClick={() => handleSquareClick(x, y)}
+      style={{ width: "12.5%", height: "12.5%" }}
+    >
       <Square black={black}>{piece}</Square>
     </div>
   );
@@ -24,7 +29,6 @@ export default function Board({ knightPosition }) {
   }
 
   return (
-    // <div>dfasdf</div>
     <div
       style={{
         width: "300px",
